@@ -42,3 +42,7 @@ output "storage_account_resource" {
   sensitive   = true
   value       = var.create_secure_storage_account ? module.storage_account[0].resource : null
 }
+
+output "function_app_identity" {
+  value = module.function_app.resource.identity
+}
